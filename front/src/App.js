@@ -2,6 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const testback = () => {
+  fetch("http://https://deploy-backend-six.vercel.app/test")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  }
+    
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +25,7 @@ function App() {
         >
           Learn React
         </a>
+        buton <button onClick={testback}>testear back</button>
       </header>
     </div>
   );
