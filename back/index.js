@@ -8,10 +8,10 @@ app.use(morgan('dev'));
 app.use(cors({
     origin: "deploy-backend-six.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    
+
 }));
 app.use("/",(req,res)=>{
-    res.send("Server is running");
+    res.status(200).json({message: "Server is running!!!"});
 })
 
 app.use("/test",(req,res)=>{
