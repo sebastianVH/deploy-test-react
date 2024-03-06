@@ -3,6 +3,8 @@ const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
 
+
+
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors({
@@ -10,6 +12,12 @@ app.use(cors({
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 
 }));
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    next();
+});
+
 app.use("/",(req,res)=>{
     res.status(200).json({message: "Server is running!!!"});
 })

@@ -6,7 +6,7 @@ function App() {
 
   const testback = async () => {
     try {
-      const {data} = await axios.get("http://https://deploy-backend-six.vercel.app")
+      const {data} = await axios.get("https://deploy-backend-six.vercel.app")
       console.log(data)
     } catch (error) {
       
