@@ -5,7 +5,11 @@ const morgan = require('morgan');
 
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(cors());
+app.use(cors({
+    origin: "deploy-backend-six.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    
+}));
 app.use("/",(req,res)=>{
     res.send("Server is running");
 })

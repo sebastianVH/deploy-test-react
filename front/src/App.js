@@ -1,12 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 function App() {
 
-  const testback = () => {
-  fetch("http://https://deploy-backend-six.vercel.app/test")
-  .then(response => response.json())
-  .then(data => console.log(data))
+  const testback = async () => {
+    try {
+      const {data} = await axios.get("http://https://deploy-backend-six.vercel.app/test")
+      console.log(data)
+    } catch (error) {
+      
+    }
   }
     
 
