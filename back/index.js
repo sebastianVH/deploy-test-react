@@ -7,10 +7,11 @@ const morgan = require('morgan');
 
 app.use(express.json());
 app.use(morgan('dev'));
+app.use(cors());
 
 
 app.use("/",(req,res)=>{
-    res.status(200).json({message: "Server is running!!!"});
+    res.send("Hola desde el back");
 })
 
 app.use("/test",(req,res)=>{
