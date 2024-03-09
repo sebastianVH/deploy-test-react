@@ -7,8 +7,17 @@ const morgan = require('morgan');
 
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(cors());
+app.use(cors(
+    {
+        origin: "https://ec2-18-229-125-190.sa-east-1.compute.amazonaws.com",
 
+    }
+));
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://ec2-18-229-125-190.sa-east-1.compute.amazonaws.com');
+    next();
+  })
 
 app.use("/",(req,res)=>{
     res.send("Hola desde el back");
