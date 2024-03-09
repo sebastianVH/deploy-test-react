@@ -1,18 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import axios from 'axios';
+
 
 function App() {
 
-  const testback = async () => {
-    try {
-      const {data} = await axios.get("https://deploy-backend-six.vercel.app")
-      console.log(data)
-    } catch (error) {
-      
-    }
-  }
-    
 
   return (
     <div className="App">
@@ -29,7 +20,6 @@ function App() {
         >
           Learn React
         </a>
-        buton <button onClick={testback}>testear back</button>
       </header>
     </div>
   );

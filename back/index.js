@@ -7,16 +7,7 @@ const morgan = require('morgan');
 
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(cors({
-    origin: "deploy-backend-six.vercel.app",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 
-}));
-
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    next();
-});
 
 app.use("/",(req,res)=>{
     res.status(200).json({message: "Server is running!!!"});
